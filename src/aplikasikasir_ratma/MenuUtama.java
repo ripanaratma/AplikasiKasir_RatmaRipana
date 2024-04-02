@@ -374,6 +374,11 @@ public void tampilWaktu() {
 
         penjualan.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Downloads\\penjualan-15.png")); // NOI18N
         penjualan.setText("penjualan");
+        penjualan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                penjualanActionPerformed(evt);
+            }
+        });
         Transaksi.add(penjualan);
 
         jMenuBar1.add(Transaksi);
@@ -516,6 +521,10 @@ new FormLaporanTransaksi().setVisible(true);    // TODO add your handling code h
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
 new FormAbout().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void penjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penjualanActionPerformed
+new FormPenjualan().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_penjualanActionPerformed
 
     /**
      * @param args the command line arguments

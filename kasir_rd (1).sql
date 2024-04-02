@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2024 at 03:22 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Waktu pembuatan: 02 Apr 2024 pada 04.35
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detailpenjualan`
+-- Struktur dari tabel `detailpenjualan`
 --
 
 CREATE TABLE `detailpenjualan` (
@@ -36,16 +36,20 @@ CREATE TABLE `detailpenjualan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `detailpenjualan`
+-- Dumping data untuk tabel `detailpenjualan`
 --
 
 INSERT INTO `detailpenjualan` (`DetailID`, `ProdukID`, `Harga`, `JumlahProduk`, `Subtotal`) VALUES
-('DIDP001', '8993988090069', 2500, 5, 12500);
+('DIDP002', '8991389230220', 4000, 5, 20000),
+('DIDP003', '6956953588086', 4500, 4, 18000),
+('DIDP004', '8993988286905', 3000, 5, 15000),
+('DIDP005', '8993988090243', 2000, 5, 10000),
+('DIDP006', '6956953588086', 4500, 2, 9000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Struktur dari tabel `login`
 --
 
 CREATE TABLE `login` (
@@ -56,17 +60,18 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `login`
+-- Dumping data untuk tabel `login`
 --
 
 INSERT INTO `login` (`LoginID`, `Username`, `Password`, `HakAkses`) VALUES
 ('123', 'ratma', '12345', 'Admin'),
+('1234', 'rtm', '123', 'Petugas'),
 ('12345', 'dina', '123456', 'Petugas');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Struktur dari tabel `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -77,7 +82,7 @@ CREATE TABLE `pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pelanggan`
+-- Dumping data untuk tabel `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`PelangganID`, `NamaPelanggan`, `Alamat`, `NomorTelepon`) VALUES
@@ -87,7 +92,7 @@ INSERT INTO `pelanggan` (`PelangganID`, `NamaPelanggan`, `Alamat`, `NomorTelepon
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penjualan`
+-- Struktur dari tabel `penjualan`
 --
 
 CREATE TABLE `penjualan` (
@@ -98,10 +103,22 @@ CREATE TABLE `penjualan` (
   `TotalHarga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `penjualan`
+--
+
+INSERT INTO `penjualan` (`PenjualanID`, `DetailID`, `TanggalPenjualan`, `JamPenjualan`, `TotalHarga`) VALUES
+('IDP001', 'DIDP001', '2024-04-01', '09:46:33', 27000),
+('IDP002', 'DIDP002', '2024-04-01', '09:48:08', 20000),
+('IDP003', 'DIDP003', '2024-04-02', '08:22:34', 18000),
+('IDP004', 'DIDP004', '2024-04-02', '08:33:25', 15000),
+('IDP005', 'DIDP005', '2024-04-02', '08:41:05', 10000),
+('IDP006', 'DIDP006', '2024-04-02', '09:27:17', 9000);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
@@ -112,46 +129,46 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`ProdukID`, `NamaProduk`, `Harga`, `Stok`) VALUES
-('6956953588086', 'pulpen', 4500, 45),
-('8991389230220', 'buku tulis', 4000, 45),
+('6956953588086', 'pulpen', 4500, 38),
+('8991389230220', 'buku tulis', 4000, 40),
 ('8993988090069', 'penghapus', 2500, 30),
-('8993988090243', 'joyko', 2000, 0),
-('8993988286905', 'pensil', 3000, 25);
+('8993988090243', 'tipe x', 2000, 25),
+('8993988286905', 'pensil', 3000, 20);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `detailpenjualan`
+-- Indeks untuk tabel `detailpenjualan`
 --
 ALTER TABLE `detailpenjualan`
   ADD PRIMARY KEY (`DetailID`);
 
 --
--- Indexes for table `login`
+-- Indeks untuk tabel `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`LoginID`);
 
 --
--- Indexes for table `pelanggan`
+-- Indeks untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`PelangganID`);
 
 --
--- Indexes for table `penjualan`
+-- Indeks untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
   ADD PRIMARY KEY (`PenjualanID`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`ProdukID`);

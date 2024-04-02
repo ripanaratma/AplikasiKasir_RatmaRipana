@@ -409,7 +409,6 @@ ambil_stock();
         txttotal.setText("");
         txtbayar.setText("");
         txtkembalian.setText("");
-        txtidpenjualan.setText("");
         cari();        // TODO add your handling code here:
     }//GEN-LAST:event_btnbayarActionPerformed
 
@@ -440,7 +439,7 @@ ambil_stock();
     }//GEN-LAST:event_btntambahActionPerformed
 
     private void btnkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkeluarActionPerformed
-        // TODO add your handling code here:
+this.dispose();         // TODO add your handling code here:
     }//GEN-LAST:event_btnkeluarActionPerformed
 
     private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed

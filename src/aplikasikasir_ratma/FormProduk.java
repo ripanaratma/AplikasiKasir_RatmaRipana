@@ -327,8 +327,7 @@ ResultSet rst;
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkeluarActionPerformed
-        new MenuUtama() .setVisible(true);
-        this.dispose();         // TODO add your handling code here:
+this.dispose();         // TODO add your handling code here:
     }//GEN-LAST:event_btnkeluarActionPerformed
 
     private void txtIDProdukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDProdukActionPerformed
